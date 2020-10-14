@@ -1,6 +1,13 @@
 # py_microapps
 Package of my Python's micro projects.
-
+## List of apps
+```
+Graph ping
+FTP Monitor
+Math operations
+Transcriptor
+and other
+```
 # Requiments 
 ## Install from pip
 ```
