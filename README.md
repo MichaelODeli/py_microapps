@@ -4,7 +4,12 @@ Package of my Python's micro projects.
 # Requiments 
 ## Install from pip
 ```
-soon
+win10toast (with fix)
+configparser
+pymsgbox
+ftplib
+consolemenu
+math
 ```
 ## Fixes
 ### Fix win10toast
