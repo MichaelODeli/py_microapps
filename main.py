@@ -1,10 +1,16 @@
 from consolemenu import *
 from consolemenu.items import *
 from consolemenu.format import *
+import subprocess
 from math_res import math_res as mr
 from text_res import text_res as tres
 from net_res import net_res as netres
 current_version=str("ver: dev branch") # onfy for official releases, if you want to add your own apps, use your version
+
+# Consolemenu and matplotlib has threading problem. Untill i will fix it, launch graphping using this method
+def netpinglauncher():
+    subprocess.Popen(r'cmd.exe /c start python.exe net_res/graphping_launcher.py')
+
 # ---- APPS ----
 # ---- APPS ----
 
@@ -37,8 +43,8 @@ def text_menu_show():
 # NETWORK APP
 network_menu = ConsoleMenu("Network apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
 network_menu_item = MenuItem("Menu Item")
-network_menu_item1 = FunctionItem("FTP Monitor (need fix from https://github.com/MichaelODeli/py_ftp-manager)", netres.ftpmonitor)
-network_menu_item2 = FunctionItem("Graph Ping", netres.graph_ping)
+network_menu_item1 = FunctionItem("FTP Monitor (need fix from github.com/MichaelODeli/py_ftp-manager)", netres.ftpmonitor)
+network_menu_item2 = FunctionItem("Graph Ping", netpinglauncher)
 network_menu.append_item(network_menu_item1)
 network_menu.append_item(network_menu_item2)
 def network_menu_show():
