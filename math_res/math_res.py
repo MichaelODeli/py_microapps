@@ -1,4 +1,28 @@
 import math
+def tax_calc():
+    print("RUS tax calculator for RUPOST packages. Actual for 2020")
+    price=float(input("Enter price (in your currency) of your package - "))
+    weight=float(input("Enter weight of your package - "))
+    print("Enter your currency rate to EUR.")
+    currency=float(input("Example: the rate of 1 EUR to RUB as of 15.10.2020 is 90.71. Therefore, you need to enter '90.71'"))
+    percent=15
+    max_price=currency*300
+    tax=0
+    if price>max_price or weight>31:
+        if price>max_price and weight<31: tax=(percent*0.01)*(price-max_price)
+        if weight>31 and price<max_price: tax=(percent*0.01)*(weight-31)
+        if weight>31 and price>max_price:
+            tax0=(percent*0.01)*(price-max_price)
+            tax1=(percent*0.01)*(weight-31)
+            if tax0>tax1: tax=tax0
+            if tax1>tax0: tax=tax1
+            if tax1==tax0: tax=tax1
+        tax=str(tax)
+        print("Ваш налог "+tax+ " RUB.")
+    else:
+        print("Поздравляю. Налога нет.")
+    input()
+
 def sin_cos_tan():
     try:
         sinx=int(input("Num to find SIN -  "))
