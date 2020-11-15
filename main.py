@@ -10,7 +10,7 @@ except:
     print("An error occurred importing application modules")
     print("Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)")
 
-current_version=str("ver: dev branch") # onfy for official releases, if you want to add your own apps, use your version
+current_version=str("ver: build 151120") # onfy for official releases, if you want to add your own apps, use your version
 
 # Consolemenu and matplotlib has threading problem. Untill i will fix it, launch graphping using this method
 def netpinglauncher():
