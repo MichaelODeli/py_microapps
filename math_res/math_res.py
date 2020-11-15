@@ -22,6 +22,21 @@ def tax_calc():
     else:
         print("Поздравляю. Налога нет.")
     input()
+def deliteli():
+    number=int(input("Enter number: "))
+    deliteli=[]
+    delitel=1
+    while number!=delitel:
+        if number%delitel==0:
+            deliteli.append(delitel)
+        delitel+=1
+    deliteli.append(number)
+    print("There are divisors by the number "+str(number))
+    print(deliteli)
+    for del_cur in deliteli:
+        del_cur_1=int(number/del_cur)
+        print(str(number)+"/"+str(del_cur)+" = "+str(del_cur_1))
+    input()
 
 def sin_cos_tan():
     try:

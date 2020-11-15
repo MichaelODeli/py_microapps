@@ -1,10 +1,15 @@
-from consolemenu import *
-from consolemenu.items import *
-from consolemenu.format import *
-import subprocess
-from math_res import math_res as mr
-from text_res import text_res as tres
-from net_res import net_res as netres
+try:
+    from consolemenu import *
+    from consolemenu.items import *
+    from consolemenu.format import *
+    import subprocess
+    from math_res import math_res as mr
+    from text_res import text_res as tres
+    from net_res import net_res as netres
+except:
+    print("An error occurred importing application modules")
+    print("Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)")
+
 current_version=str("ver: dev branch") # onfy for official releases, if you want to add your own apps, use your version
 
 # Consolemenu and matplotlib has threading problem. Untill i will fix it, launch graphping using this method
@@ -24,6 +29,7 @@ math_div = FunctionItem("Division (/)", mr.delen)
 math_perc = FunctionItem("Percent (%)", mr.percent)
 math_sins = FunctionItem("Sin, Cos, Tg", mr.sin_cos_tan)
 math_tax = FunctionItem("Tax calculator (to RUS, 2020)", mr.tax_calc)
+math_deliteli= FunctionItem("Divisors", mr.deliteli)
 math_menu.append_item(math_sum)
 math_menu.append_item(math_multi)
 math_menu.append_item(math_subtr)
@@ -31,6 +37,7 @@ math_menu.append_item(math_div)
 math_menu.append_item(math_perc)
 math_menu.append_item(math_sins)
 math_menu.append_item(math_tax)
+math_menu.append_item(math_deliteli)
 def math_menu_show():
     math_menu.show()
 
