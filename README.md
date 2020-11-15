@@ -9,6 +9,7 @@ Transcriptor
 and other
 ```
 # Requiments 
+## Warning! MicroApps works only with Windows OS. In future will be added functionality for Linux and macOS
 ## Install from pip
 ```
 win10toast (with fix)
