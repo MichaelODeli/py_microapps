@@ -19,16 +19,22 @@ current_version=str("ver: dev branch") # onfy for official releases, if you want
 math_menu = ConsoleMenu("Math apps."+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
 math_easy = FunctionItem("Easy operations", mr.math_menu_easy)
 math_money = FunctionItem("Money operations", mr.math_menu_money)
+math_subj = FunctionItem("Subject calculators", mr.dev) # phys, IT, build
+math_unit = FunctionItem("Unit conversion", mr.dev)
 math_menu.append_item(math_easy)
 math_menu.append_item(math_money)
+math_menu.append_item(math_subj)
+math_menu.append_item(math_unit)
 def math_menu_main_show():
     math_menu.show()
 
 # TEXT APPs
 text_menu = ConsoleMenu("Text apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
 text_menu_item = MenuItem("Menu Item")
-text_menu_item1 = FunctionItem("Transcriptor", tres.transcript)
-text_menu.append_item(text_menu_item1)
+text_transcriptor = FunctionItem("Transcriptor", tres.transcript)
+text_counter = FunctionItem("Words and symbols calculator", tres.dev)
+text_menu.append_item(text_transcriptor)
+text_menu.append_item(text_counter)
 def text_menu_show():
     text_menu.show()
 
@@ -39,10 +45,12 @@ def netpinglauncher():
     subprocess.Popen(r'cmd.exe /c start python.exe net_res/graphping_launcher.py')
 network_menu = ConsoleMenu("Network apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
 network_menu_item = MenuItem("Menu Item")
-network_menu_item1 = FunctionItem("FTP Monitor (need fix from github.com/MichaelODeli/py_ftp-manager)", netres.ftpmonitor)
-network_menu_item2 = FunctionItem("Graph Ping", netpinglauncher)
-network_menu.append_item(network_menu_item1)
-network_menu.append_item(network_menu_item2)
+network_ftpmon = FunctionItem("FTP Monitor (need fix from github.com/MichaelODeli/py_ftp-manager)", netres.ftpmonitor)
+network_graphping = FunctionItem("Graph Ping", netpinglauncher)
+network_calc = FunctionItem("You can use IT calculator in Math APPs", netres.dev)
+network_menu.append_item(network_ftpmon)
+network_menu.append_item(network_graphping)
+network_menu.append_item(network_calc)
 def network_menu_show():
     network_menu.show()
 

@@ -10,6 +10,7 @@ import os
 
 def dev():
     print("Stub for developing applications")
+    input()
 
 def graph_ping():
     target_link=str(input("Enter URL, or IP-adress to ping: "))

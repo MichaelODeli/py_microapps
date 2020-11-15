@@ -1,5 +1,6 @@
 def dev():
     print("Stub for developing applications")
+    input()
 
 def transcript():
     word=input("Enter your word to transcript: ")

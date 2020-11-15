@@ -4,6 +4,7 @@ from consolemenu.items import *
 from consolemenu.format import *
 def dev():
     print("Stub for developing applications")
+    input()
 
 def tax_calc():
     print("RUS tax calculator for RUPOST packages. Actual for 2020")
