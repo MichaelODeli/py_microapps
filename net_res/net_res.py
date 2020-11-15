@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 from pythonping import ping
 import os
 
+def dev():
+    print("Stub for developing applications")
+
 def graph_ping():
     target_link=str(input("Enter URL, or IP-adress to ping: "))
     time_sec=int(input("How long we must ping this URL? (sec): "))

@@ -1,4 +1,10 @@
 import math
+from consolemenu import *
+from consolemenu.items import *
+from consolemenu.format import *
+def dev():
+    print("Stub for developing applications")
+
 def tax_calc():
     print("RUS tax calculator for RUPOST packages. Actual for 2020")
     price=float(input("Enter price (in your currency) of your package - "))
@@ -37,7 +43,6 @@ def deliteli():
         del_cur_1=int(number/del_cur)
         print(str(number)+"/"+str(del_cur)+" = "+str(del_cur_1))
     input()
-
 def sin_cos_tan():
     try:
         sinx=int(input("Num to find SIN -  "))
@@ -129,3 +134,28 @@ def percent():
         V=(B*S)/A
         print("V= "+str(V))
     input()
+
+def math_menu_easy():
+    math_menu = ConsoleMenu("Math apps. Easy operations", "by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
+    math_sum = FunctionItem("Sum (+)", summa)
+    math_multi = FunctionItem("Multiplication (*)", umnoz)
+    math_subtr = FunctionItem("Subtraction (-)", razn)
+    math_div = FunctionItem("Division (/)", delen)
+    math_perc = FunctionItem("Percent (%)", percent)
+    math_sins = FunctionItem("Sin, Cos, Tg", sin_cos_tan)
+    math_deliteli= FunctionItem("Divisors", deliteli)
+    math_menu.append_item(math_sum)
+    math_menu.append_item(math_multi)
+    math_menu.append_item(math_subtr)
+    math_menu.append_item(math_div)
+    math_menu.append_item(math_perc)
+    math_menu.append_item(math_sins)
+    math_menu.append_item(math_deliteli)
+    math_menu.show()
+
+def math_menu_money():
+    math_menu = ConsoleMenu("Math apps. Money operations", "by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
+    math_tax = FunctionItem("Tax calculator (to RUS, 2020)", tax_calc)
+    math_menu.append_item(math_tax)
+    math_menu.show()
+
