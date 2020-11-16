@@ -11,6 +11,7 @@ try:
 except:
     print("An error occurred importing application modules")
     print("Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)")
+    exit(0)
 # file checking
 print("Please wait, checking MD5...")
 config = configparser.ConfigParser()
@@ -80,7 +81,7 @@ else:
         subprocess.Popen(r'cmd.exe /c start python.exe net_res/ftpmon_launcher.py')
     network_menu = ConsoleMenu("Network apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
     network_menu_item = MenuItem("Menu Item")
-    network_ftpmon = FunctionItem("FTP Monitor (need fix from github.com/MichaelODeli/py_ftp-manager)", ftpmonlauncher)
+    network_ftpmon = FunctionItem("FTP Monitor (fix it from 'fix' folder)", ftpmonlauncher)
     network_graphping = FunctionItem("Graph Ping", netpinglauncher)
     network_calc = FunctionItem("You can use IT calculator in Math APPs", netres.dev)
     network_menu.append_item(network_ftpmon)
