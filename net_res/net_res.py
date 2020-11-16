@@ -75,8 +75,13 @@ def ftpmonitor():
         ftp.login()
     except:
         ftp.login(ftplogin, ftppassword)
-    for folder_name in folder_list:
-        ftp.cwd(folder_name)
+    try:
+        for folder_name in folder_list:
+            ftp.cwd(folder_name)
+    except:
+        print("FTP error")
+        input()
+        exit(0)
     data_launch = ftp.nlst()
 
     # notification set-up

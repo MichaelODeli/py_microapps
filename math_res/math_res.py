@@ -160,3 +160,20 @@ def math_menu_money():
     math_menu.append_item(math_tax)
     math_menu.show()
 
+def math_menu_subj():
+    math_menu = ConsoleMenu("Math apps. Subject calculators", "by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
+    math_subj_it = FunctionItem("IT", dev)
+    math_subj_phys = FunctionItem("Physics", dev)
+    math_subj_build = FunctionItem("Building", dev)
+    math_menu.append_item(math_subj_it)
+    math_menu.append_item(math_subj_phys)
+    math_menu.append_item(math_subj_build)
+    math_menu.show()
+
+def math_menu_unit():
+    math_menu = ConsoleMenu("Math apps. Unit conversion", "by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
+    math_unit_launch = FunctionItem("Launch", dev)
+    math_unit_help = FunctionItem("Show avaiable units", dev)
+    math_menu.append_item(math_unit_launch)
+    math_menu.append_item(math_unit_help)
+    math_menu.show()

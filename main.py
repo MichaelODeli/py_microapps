@@ -54,8 +54,8 @@ else:
     math_menu = ConsoleMenu("Math apps."+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
     math_easy = FunctionItem("Easy operations", mr.math_menu_easy)
     math_money = FunctionItem("Money operations", mr.math_menu_money)
-    math_subj = FunctionItem("Subject calculators", mr.dev) # phys, IT, build
-    math_unit = FunctionItem("Unit conversion", mr.dev)
+    math_subj = FunctionItem("Subject calculators", mr.math_menu_subj) # phys, IT, build
+    math_unit = FunctionItem("Unit conversion", mr.math_menu_unit)
     math_menu.append_item(math_easy)
     math_menu.append_item(math_money)
     math_menu.append_item(math_subj)
@@ -74,13 +74,13 @@ else:
         text_menu.show()
 
     # NETWORK APPs
-
-    # Consolemenu and matplotlib has threading problem. Untill i will fix it, launch graphping using this method
     def netpinglauncher():
         subprocess.Popen(r'cmd.exe /c start python.exe net_res/graphping_launcher.py')
+    def ftpmonlauncher():
+        subprocess.Popen(r'cmd.exe /c start python.exe net_res/ftpmon_launcher.py')
     network_menu = ConsoleMenu("Network apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
     network_menu_item = MenuItem("Menu Item")
-    network_ftpmon = FunctionItem("FTP Monitor (need fix from github.com/MichaelODeli/py_ftp-manager)", netres.ftpmonitor)
+    network_ftpmon = FunctionItem("FTP Monitor (need fix from github.com/MichaelODeli/py_ftp-manager)", ftpmonlauncher)
     network_graphping = FunctionItem("Graph Ping", netpinglauncher)
     network_calc = FunctionItem("You can use IT calculator in Math APPs", netres.dev)
     network_menu.append_item(network_ftpmon)
@@ -101,7 +101,4 @@ else:
     main_menu.append_item(main_item_tomath)
     main_menu.append_item(main_item_totext)
     main_menu.append_item(main_item_tonet)
-    def main_menu_show():
-        main_menu.show()
-
-    main_menu_show()
+    main_menu.show()
