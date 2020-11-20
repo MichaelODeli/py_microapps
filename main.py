@@ -8,10 +8,12 @@ try:
     from net_res import net_res as netres
     import hashlib
     import configparser
+    import platform
 except:
     print("An error occurred importing application modules")
     print("Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)")
     exit(0)
+thisos=platform.system()
 # file checking
 print("Please wait, checking MD5...")
 config = configparser.ConfigParser()
@@ -76,9 +78,17 @@ else:
 
     # NETWORK APPs
     def netpinglauncher():
-        subprocess.Popen(r'cmd.exe /c start python.exe net_res/graphping_launcher.py')
+        if thisos=='Windows':
+            subprocess.Popen(r'cmd.exe /c start python.exe net_res/graphping_launcher.py')
+        if thisos=='Linux':
+            netres.graph_ping()
     def ftpmonlauncher():
-        subprocess.Popen(r'cmd.exe /c start python.exe net_res/ftpmon_launcher.py')
+        if thisos=='Windows':
+            subprocess.Popen(r'cmd.exe /c start python.exe net_res/ftpmon_launcher.py')
+        if thisos=='Linux':
+            # subprocess.Popen(r'python3 net_res/ftpmon_launcher.py') - NOT SUPPORTED
+            print("Linux OS does not suuport this application. Press Enter to back in menu")
+            input()
     network_menu = ConsoleMenu("Network apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
     network_menu_item = MenuItem("Menu Item")
     network_ftpmon = FunctionItem("FTP Monitor (fix it from 'fix' folder)", ftpmonlauncher)

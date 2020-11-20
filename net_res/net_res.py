@@ -1,12 +1,15 @@
 # import  modules
-from ftplib import FTP
-import configparser
-from win10toast import ToastNotifier
-from pymsgbox import *
-import time
-import matplotlib.pyplot as plt
-from pythonping import ping
-import os
+try:
+    from win10toast import ToastNotifier
+    from ftplib import FTP
+    import configparser
+    from pymsgbox import *
+    import time
+    import matplotlib.pyplot as plt
+    from pythonping import ping
+    import os
+except:
+    n=1
 
 def dev():
     print("Stub for developing applications")
