@@ -20,6 +20,7 @@ consolemenu
 math
 matplotlib
 pythonping
+pymsgbox
 ```
 ### Fixes
 #### Fix win10toast (only Windows 10)
