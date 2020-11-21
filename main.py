@@ -9,11 +9,19 @@ try:
     import hashlib
     import configparser
     import platform
+    from pymsgbox import *
 except:
-    print("An error occurred importing application modules")
-    print("Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)")
-    exit(0)
+    try:
+        alert(text="An error occurred importing application modules. Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)", title="Error")
+        exit(0)
+    except:
+        print("An error occurred importing application modules. Possible solutions: try reinstalling the required modules and checking the integrity of the application files (in development)")
+
 thisos=platform.system()
+if thisos=='Linux' or thisos=='macOS':
+    alert(title="Warning", text="Your OS - Linux or macOS. Some features (such as FTP Monitor) don`t working here. Sorry :(")
+if thisos=='Windows':
+    alert(title="Notification", text='Your OS is Windows. All functions will work property.')
 # file checking
 print("Please wait, checking MD5...")
 config = configparser.ConfigParser()
@@ -31,22 +39,22 @@ current_hash4=hashlib.md5(open('net_res/net_res.py','rb').read()).hexdigest()
 current_hash5=hashlib.md5(open('net_res/graphping_launcher.py','rb').read()).hexdigest()
 current_hash6=hashlib.md5(open('fix/__init__.py','rb').read()).hexdigest()
 if current_hash1!=main:
-    print("main.py has non-valid md5. Reinstall app.")
+    alert(title="Error", text='main.py has non-valid md5. Reinstall app.')
     exit(0)
 elif current_hash2!=text_res:
-    print("text_res/text_res.py has non-valid md5. Reinstall app.")
+    alert(title="Error", text='text_res/text_res.py has non-valid md5. Reinstall app.')
     exit(0)
 elif current_hash3!=math_res:
-    print("math_res/math_res.py has non-valid md5. Reinstall app.")
+    alert(title="Error", text='math_res/math_res.py has non-valid md5. Reinstall app.')
     exit(0)
 elif current_hash4!=net_res:
-    print("net_res/net_res.py has non-valid md5. Reinstall app.")
+    alert(title="Error", text='net_res/net_res.py has non-valid md5. Reinstall app.')
     exit(0)
 elif current_hash5!=graph:
-    print("net_res/graphping_launcher.py has non-valid md5. Reinstall app.")
+    alert(title="Error", text='net_res/graphping_launcher.py has non-valid md5. Reinstall app.')
     exit(0)
 elif current_hash6!=fix:
-    print("fix/__init__.py has non-valid md5. Reinstall app.")
+    alert(title="Error", text='fix/__init__.py has non-valid md5. Reinstall app.')
     exit(0)
 else:
     current_version=str("ver: dev branch") # onfy for official releases, if you want to add your own apps, use your version
@@ -87,7 +95,7 @@ else:
             subprocess.Popen(r'cmd.exe /c start python.exe net_res/ftpmon_launcher.py')
         if thisos=='Linux':
             # subprocess.Popen(r'python3 net_res/ftpmon_launcher.py') - NOT SUPPORTED
-            print("Linux OS does not suuport this application. Press Enter to back in menu")
+            print('Linux OS does not suuport this application. ')
             input()
     network_menu = ConsoleMenu("Network apps. "+current_version,"by MichaelODeli on https://github.com/MichaelODeli/py_microapps")
     network_menu_item = MenuItem("Menu Item")

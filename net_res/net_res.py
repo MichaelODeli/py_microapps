@@ -1,6 +1,5 @@
 # import  modules
 try:
-    from win10toast import ToastNotifier
     from ftplib import FTP
     import configparser
     from pymsgbox import *
@@ -8,6 +7,7 @@ try:
     import matplotlib.pyplot as plt
     from pythonping import ping
     import os
+    from win10toast import ToastNotifier
 except:
     n=1
 
